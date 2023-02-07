@@ -30,6 +30,4 @@ public class PunchOut extends Env{
         btnout.isDisplayed();
         Thread.sleep(5000);
     }
-
-
 }

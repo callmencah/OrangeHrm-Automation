@@ -9,6 +9,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+
+
 public class EditProfile extends Env{
     PageEditProfile PageEditProfile = new PageEditProfile();
     PageAddUser PageAddUser = new PageAddUser();
@@ -23,24 +25,22 @@ public class EditProfile extends Env{
 
     @When("User Set National")
     public void user_set_national() throws InterruptedException {
-        Actions act = new Actions(driver);
         driver.findElement(PageEditProfile.getNationality()).click();
+        Thread.sleep(2000);
+        driver.findElement(PageEditProfile.getSetNational()).click();
 
-        Thread.sleep(4000);
-        act.sendKeys("i",Keys.TAB);
     }
 
     @When("User Set Marital")
     public void user_set_marital() throws InterruptedException {
-        Actions act = new Actions(driver);
         driver.findElement(PageEditProfile.getMaritalStatus()).click();
-
-        Thread.sleep(4000);
-        act.sendKeys("s",Keys.TAB);
+        Thread.sleep(2000);
+        driver.findElement(PageEditProfile.getMarried()).click();
     }
 
     @When("User Set Gender")
-    public void user_set_gender() {
+    public void user_set_gender() throws InterruptedException {
+
         driver.findElement(PageEditProfile.getRandomGender()).click();
     }
 
